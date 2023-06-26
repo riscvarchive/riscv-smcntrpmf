@@ -1,8 +1,6 @@
-= RISC-V Specification Template
+= Cycle & Instret Privilege Mode Filtering Architecture Extension
 
-This repository serves as a blueprint for creating GitHub repositories within the RISC-V organization for the purpose of developing specifications. The template aims to facilitate and standardize the process of specification development.
-
-NOTE: If you are viewing this in a specification repository, kindly update the title for this section and provide an introduction relevant to your repository.
+Smcntrpmf extension extends the RISC-V Privileged ISA to support privilege mode filtering for the cycle and instret counters.  (‘Sm’ for privileged M-mode extension, ‘cntr’ because it extends the 'Zicntr' extension, ‘pmf’ for Privilege Mode Filtering).  This extension depends on the Zicntr extension.
 
 == License
 
