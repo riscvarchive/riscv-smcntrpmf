@@ -1,24 +1,24 @@
-= RISC-V Example Specification Document (Zexmpl)
-Authors: Author 1, Author 2
-:docgroup: RISC-V Task Group
-:description: RISC-V Example Specification Document (Zexmpl)
+= RISC-V Cycle and Instret Privilege Mode Filtering (Smcntrpmf)
+Authors: Beeman Strong
+:docgroup: Fast track
+:description: RISC-V Cycle and Instret Privilege Mode Filtering (Smcntrpmf)
 :company: RISC-V.org
-:revdate: 1/2023
+:revdate: 06/28/2023
 :revnumber: 1.0
-:revremark: This document is under development. Expect potential changes. Visit http://riscv.org/spec-state for further details.
+:revremark: This document is frozen. Visit http://riscv.org/spec-state for further details.
 :revinfo:
 :url-riscv: http://riscv.org
 :doctype: book
 :preface-title: Preamble
 :colophon:
 :appendix-caption: Appendix
-:imagesdir: docs-resources/images
+:imagesdir: images
 :title-logo-image: image:risc-v_logo.png[pdfwidth=3.25in,align=center]
 // Settings:
 :experimental:
 :reproducible:
 //:WaveDromEditorApp: app/wavedrom-editor.app
-:imagesoutdir: docs-resources/images
+:imagesoutdir: images
 :bibtex-file: example.bib
 :bibtex-order: alphabetical
 :bibtex-style: apa
@@ -39,11 +39,9 @@ endif::[]
 :xrefstyle: short
 
 [WARNING]
-.This document is in the link:http://riscv.org/spec-state[Development state]
+.This document is in the link:http://riscv.org/spec-state[Frozen state]
 ====
-Expect potential changes. This draft specification is likely to evolve before
-it is accepted as a standard. Implementations based on this draft
-may not conform to the future standard.
+Change is extremely unlikely. A high threshold will be used, and a change will only occur because of some truly critical issue being identified during the public review cycle. Any other desired or needed changes can be the subject of a follow-on new extension.
 ====
 
 [preface]
@@ -59,8 +57,9 @@ Copyright 2022 by RISC-V International.
 include::contributors.adoc[]
 
 include::intro.adoc[]
-include::chapter2.adoc[]
+include::csrs.adoc[]
+include::behavior.adoc[]
 
 // The index must precede the bibliography
 include::index.adoc[]
-include::bibliography.adoc[]
+//include::bibliography.adoc[]
