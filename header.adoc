@@ -12,13 +12,13 @@ Authors: Beeman Strong
 :preface-title: Preamble
 :colophon:
 :appendix-caption: Appendix
-:imagesdir: images
+:imagesdir: docs-resources/images
 :title-logo-image: image:risc-v_logo.png[pdfwidth=3.25in,align=center]
 // Settings:
 :experimental:
 :reproducible:
 //:WaveDromEditorApp: app/wavedrom-editor.app
-:imagesoutdir: images
+:imagesoutdir: docs-resources/images
 :bibtex-file: example.bib
 :bibtex-order: alphabetical
 :bibtex-style: apa
