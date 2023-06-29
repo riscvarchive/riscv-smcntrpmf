@@ -4,4 +4,6 @@ This RISC-V specification has been contributed to directly or indirectly by:
 
 [%hardbreaks]
 * Beeman Strong <beeman@rivosinc.com>
+* Greg Favor <gfavor@ventanamicro.com>
+* John Hauser <jh.riscv@jhauser.us>
 
