@@ -7,15 +7,15 @@ The cycle counter will simply count CPU cycles while the CPU is in a non-inhibit
 
 [NOTE]
 ====
-The RISC-V ISA has no requirement that the number of cycles for a trap or trap return be the same for all occurrences.  Implementations are free to determine the extent to which this number may be consistent and predictable (or not), and the same is true for the specific cycle in which privilege mode changes.
+_The RISC-V ISA has no requirement that the number of cycles for a trap or trap return be the same for all occurrences.  Implementations are free to determine the extent to which this number may be consistent and predictable (or not), and the same is true for the specific cycle in which privilege mode changes._
 ====
 
 For the instret counter, most instructions do not affect mode transitions, so for those the behavior is clear: instructions that retire in a non-inhibited mode increment instret, and instructions that retire in an inhibited mode do not.  There are two types of instructions that can affect a privilege mode change: instructions that trap to a more privileged mode, and xRET instructions that return to a less privileged mode.  Instructions that trap (take synchronous exceptions) do not retire, so those will never increment instret.  xRET instructions do retire, and should increment instret only if the originating privilege mode is not inhibited.
 
 [NOTE]
 ====
-The instret definition above is intended to ensure that the counter increments in a predictable fashion.  For example, consider a scenario where minstretcfg is configured such that all modes other than U-mode are inhibited.  A user mode load should increment only once, even if it takes a page fault or other exception.  With this definition, the faulting execution of the load will not increment (it does not retire), the handler instructions will not increment (they execute in an inhibited mode), including the xRET (it arguably retires in a non-inhibited mode, but it originates in an inhibited mode).  Only once the load is re-executed and retires will it increment instret.
+_The instret definition above is intended to ensure that the counter increments in a predictable fashion.  For example, consider a scenario where minstretcfg is configured such that all modes other than U-mode are inhibited.  A user mode load should increment only once, even if it takes a page fault or other exception.  With this definition, the faulting execution of the load will not increment (it does not retire), the handler instructions will not increment (they execute in an inhibited mode), including the xRET (it arguably retires in a non-inhibited mode, but it originates in an inhibited mode).  Only once the load is re-executed and retires will it increment instret._
 
-In cases where an instruction is emulated by software running in a privilege mode that is inhibited in minstretcfg, the emulation routine must emulate the instret increment.
+_In cases where an instruction is emulated by software running in a privilege mode that is inhibited in minstretcfg, the emulation routine must emulate the instret increment._
 ====
 
