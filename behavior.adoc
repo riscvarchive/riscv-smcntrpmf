@@ -10,7 +10,7 @@ The cycle counter will simply count CPU cycles while the CPU is in a non-inhibit
 _The RISC-V ISA has no requirement that the number of cycles for a trap or trap return be the same for all occurrences.  Implementations are free to determine the extent to which this number may be consistent and predictable (or not), and the same is true for the specific cycle in which privilege mode changes._
 ====
 
-For the instret counter, most instructions do not affect mode transitions, so for those the behavior is clear: instructions that retire in a non-inhibited mode increment instret, and instructions that retire in an inhibited mode do not.  There are two types of instructions that can affect a privilege mode change: instructions that trap to a more privileged mode, and xRET instructions that return to a less privileged mode.  Instructions that trap (take synchronous exceptions) do not retire, so those will never increment instret.  xRET instructions do retire, and should increment instret only if the originating privilege mode is not inhibited.
+For the instret counter, most instructions do not affect mode transitions, so for those the behavior is clear: instructions that retire in a non-inhibited mode increment instret, and instructions that retire in an inhibited mode do not.  There are two types of instructions that can affect a privilege mode change: instructions that cause synchronous exceptions to a more privileged mode, and xRET instructions that return to a less privileged mode. The former are not considered to retire, and hence do not increment instret. The latter do retire, and should increment instret only if the originating privilege mode is not inhibited.
 
 [NOTE]
 ====
