@@ -18,4 +18,3 @@ _The instret definition above is intended to ensure that the counter increments 
 
 _In cases where an instruction is emulated by software running in a privilege mode that is inhibited in minstretcfg, the emulation routine must emulate the instret increment._
 ====
-
