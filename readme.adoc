@@ -1,3 +1,8 @@
+[NOTE]
+====
+Cycle & Instret Privilege Mode Filtering (Smcntrpmf) has been merged into the Privileged Specification.  Please log any issues against the link:https://github.com/riscv/riscv-isa-manual[RISC-V ISA Manual] repository.
+====
+
 = Cycle & Instret Privilege Mode Filtering Architecture Extension
 
 Smcntrpmf extension extends the RISC-V Privileged ISA to support privilege mode filtering for the cycle and instret counters.  (‘Sm’ for privileged M-mode extension, ‘cntr’ because it extends the 'Zicntr' extension, ‘pmf’ for Privilege Mode Filtering).  This extension depends on the Zicntr extension.
